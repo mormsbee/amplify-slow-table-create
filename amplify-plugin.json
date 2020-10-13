@@ -1,0 +1,11 @@
+{
+  "name": "slow-table-create",
+  "type": "util",
+  "commands": [
+    "version",
+    "help"
+  ],
+  "eventHandlers": [
+    "PrePush"
+  ]
+}
