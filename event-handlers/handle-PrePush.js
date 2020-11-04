@@ -30,19 +30,10 @@ async function run(context, args) {
       && cftResources[item].Properties.Parameters.DynamoDBModelTableReadIOPS
     ) {
         if (dependOnName != "") {
-
-          //if (typeof cftResources[item].DependsOn[dependOnName] == "undefined") {
             let dependsOn = Object.values(cftResources[item].DependsOn);
             dependsOn.push(dependOnName);
             cftJson.Resources[item].DependsOn = dependsOn;
             console.log("Adding " + dependOnName + " to "+ item + ".DependsOn...........");
-
-          // } else {
-          //   console.log(dependOnName + ".DependsOn already contains "+ item + "...........");
-          // }
-          // console.log(cftJson.Resources[item].DependsOn);
-
-
         } else {
           console.log("Skipping first table - " + item + "..............");
         }
